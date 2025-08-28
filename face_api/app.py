@@ -16,7 +16,7 @@ load_dotenv()
 
 # Ambil dari .env
 DEBUG_MODE = os.getenv("FLASK_DEBUG", "false").lower() == "true"
-PORT = int(os.getenv("FLASK_RUN_PORT", 5000))
+PORT = int(os.getenv("FLASK_RUN_PORT", 10000))
 THRESHOLD = float(os.getenv("FACE_MATCH_THRESHOLD", 0.5))
 
 app = Flask(__name__)
@@ -170,3 +170,4 @@ def verify_face():
 
 if __name__ == '__main__':
     app.run(debug=DEBUG_MODE, port=PORT)
+
